@@ -19,6 +19,5 @@ $dark:                            #444 !default;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
-@import "www/lib/myscss/scss/patrika.scss";
+@import "www/lib/myscss/scss/patrika";
 @import "www/lib/ionic/scss/ionic";
-

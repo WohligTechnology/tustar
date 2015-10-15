@@ -1,44 +1,50 @@
-		$light: #fff !default;
-		$stable: #f8f8f8 !default;
-		$positive: #019fda !default;
-		$calm: #002c5f !default;
-		$balanced: #33cd5f !default;
-		$energized: #ffc900 !default;
-		$assertive: #ef473a !default;
-		$royal: #886aea !default;
-		$dark: #444 !default;
-		$font-family-sans-serif: "Comfortaa",
-		cursive "Helvetica Neue",
-		"Roboto",
-		"Segoe UI",
-		sans-serif !default;
-		$font-family-light-sans-serif: "Lato",
-		"HelveticaNeue-Light",
-		"Roboto-Light",
-		"Segoe UI-Light";
-		$base-color: #4a606f !default;
-		$input-color: $base-color !default;
-		$button-border-radius: 0px !default;
-		$button-border-width: 0px !default;
-		$bar-title-font-size: 18px !default;
-		$headings-font-weight: 300 !default;
-		$button-font-size: 15px !default;
-		$button-height: 40px !default;
-		$font-size-input: 15px !default;
-		$bg-menu:url('../img/background/1.jpg') no-repeat center center;
-		//***** Font Famliy ********
-		@font-face {
-		    font-family: 'Comfortaa';
-		    src: url(../fonts/cr.ttf);
-		    font-weight: 400;
-		}
-		@font-face {
-		    font-family: 'Comfortaa';
-		    src: url(../fonts/cb.ttf);
-		    font-weight: 700;
-		}
-		@font-face {
-		    font-family: 'Comfortaa';
-		    src: url(../fonts/cl.ttf);
-		    font-weight: 200;
-		}
+//		$light: #fff !default;
+//		$stable: #f8f8f8 !default;
+//		$positive: #019fda !default;
+//		$calm: #002c5f !default;
+//		$balanced: #33cd5f !default;
+//		$energized: #ffc900 !default;
+//		$assertive: #ef473a !default;
+//		$royal: #886aea !default;
+//		$dark: #444 !default;
+//		$font-family-sans-serif: "Comfortaa",
+//		cursive "Helvetica Neue",
+//		"Roboto",
+//		"Segoe UI",
+//		sans-serif !default;
+//		$font-family-light-sans-serif: "Lato",
+//		"HelveticaNeue-Light",
+//		"Roboto-Light",
+//		"Segoe UI-Light";
+//		$base-color: #4a606f !default;
+//		$input-color: $base-color !default;
+//		$button-border-radius: 0px !default;
+//		$button-border-width: 0px !default;
+//		$bar-title-font-size: 18px !default;
+//		$headings-font-weight: 300 !default;
+//		$button-font-size: 15px !default;
+//		$button-height: 40px !default;
+//		$font-size-input: 15px !default;
+//		$bg-menu:url('../img/background/1.jpg') no-repeat center center;
+//		//***** Font Famliy ********
+//		@font-face {
+//			font-family: 'Comfortaa';
+//			src: url(../fonts/cr.ttf);
+//			font-weight: 400;
+//		}
+//
+//		@font-face {
+//			font-family: 'Comfortaa';
+//			src: url(../fonts/cb.ttf);
+//			font-weight: 700;
+//		}
+//		
+//		@font-face {
+//			font-family: 'Comfortaa';
+//			src: url(../fonts/cl.ttf);
+//			font-weight: 200;
+//		}
+//		
+//		.item-divider {
+//			background-color: $light;
+//		}
