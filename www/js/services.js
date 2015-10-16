@@ -6,7 +6,7 @@ var notification = [{
 	"title" : "Notification",
 	"content" : "Demo data first notification",
 	"timestamp" : Date(),
-	"image" : "news.jpg";
+	"image" : "news.jpg"
 },{
 	"title" : "second Notification",
 	"content" : "Demo data first notification",
@@ -16,6 +16,28 @@ var notification = [{
 	"content" : "Demo data first notification",
 	"timestamp" : Date(),
 	"image" : "ionic.png"
+}];
+
+var category = [{
+	"name" : "first"
+},{
+	"name" : "second"
+},{
+	"name" : "third"
+},{
+	"name" : "forth"
+}];
+
+var village = [{
+	"name" : "first village"
+},{
+	"name" : "first village"
+},{
+	"name" : "first village"
+},{
+	"name" : "first village"
+},{
+	"name" : "first village"
 }];
 
 angular.module('starter.services', [])
