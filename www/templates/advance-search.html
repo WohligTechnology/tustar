@@ -2,37 +2,25 @@
 	<ion-content>
 		<div class="list">
 			<label class="item item-input">
-				<input type="text" placeholder="Search">
+				<input type="text" placeholder="Search" ng-model="search">
 			</label>		
 			<label class="item item-input">
 				<input type="date" placeholder="Date">
 			</label>
 			<div class="item item-divider">Category</div>
-			<li class="item item-checkbox" ng>
-				<label class="checkbox">
-					<input type="checkbox">
+			<li class="item item-checkbox" ng-repeat = "cat in category | filter : { name : search}">
+				<label class="checkbox" ng-click="changeCategory(cat)">
+					<input type="checkbox" ng-model="cat.state">
 				</label>
-				Category 1
+				{{cat.name}}
 			</li>
 
 			<div class="item item-divider">Village</div>
-			<li class="item item-checkbox">
-				<label class="checkbox">
-					<input type="checkbox">
+			<li class="item item-checkbox" ng-repeat = "vill in village | filter : { name : search}">
+				<label class="checkbox" ng-click="changeVillage(vill)">
+					<input type="checkbox" ng-model="vill.state">
 				</label>
-				Village 1
-			</li>
-			<li class="item item-checkbox">
-				<label class="checkbox">
-					<input type="checkbox">
-				</label>
-				Village 2
-			</li>
-			<li class="item item-checkbox">
-				<label class="checkbox">
-					<input type="checkbox">
-				</label>
-				Village 3
+				{{vill.name}}
 			</li>
 		</div>
 	</ion-content>
