@@ -4,9 +4,9 @@ angular.module('starter.controllers', ['ngCordova'])
 
 .controller('LoginCtrl', function ($scope) {})
 
-.controller('HomeCtrl', function ($scope, $stateParams,$cordovaSocialSharing) {
+.controller('HomeCtrl', function ($scope, $stateParams) {
 	$scope.share = function (item) {
-		window.plugins.socialsharing.share('Checkout "' + item.title + '" starting on ' + data.startdate + ', ' + data.starttime, null, data.image + 'At ' + item.venue);
+		window.plugins.socialsharing.share(item);
 	}
 })
 

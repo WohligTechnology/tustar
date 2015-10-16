@@ -15,9 +15,35 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+$font-family-sans-serif: "Lato",
+"Helvetica Neue",
+"Roboto",
+"Segoe UI",
+sans-serif !default;
+$font-family-light-sans-serif: "Lato-light",
+"HelveticaNeue-Light",
+"Roboto-Light",
+"Segoe UI-Light",
+sans-serif-light !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
-
 // Include all of Ionic
 @import "www/lib/myscss/scss/patrika";
 @import "www/lib/ionic/scss/ionic";
+
+@font-face {
+    font-family: 'Lato';
+    src: url("../fonts/Lato-Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Lato-light';
+    src: url(../fonts/Lato-Light.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/Lato-Regular.ttf);
+}
