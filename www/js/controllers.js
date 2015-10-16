@@ -1,6 +1,8 @@
 angular.module('starter.controllers', ['ngCordova'])
 
-.controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
+.controller('AppCtrl', function ($scope, $ionicModal, $timeout, MyServices) {
+	console.log(MyServices.getNotification());
+})
 
 .controller('LoginCtrl', function ($scope) {})
 
@@ -10,7 +12,9 @@ angular.module('starter.controllers', ['ngCordova'])
 	}
 })
 
-.controller('NotificationCtrl', function ($scope, $stateParams) {})
+.controller('NotificationCtrl', function ($scope, $stateParams, MyServices) {
+	$scope.notification = MyServices.getNotification();
+})
 
 .controller('AdvanceSearchCtrl', function ($scope, $stateParams) {})
 
