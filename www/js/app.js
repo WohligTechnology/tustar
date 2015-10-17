@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'pascalprecht.translate'])
 
 .run(function ($ionicPlatform) {
 	$ionicPlatform.ready(function () {
@@ -29,7 +29,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 	});
 })
 
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $translateProvider ) {
 	$stateProvider
 		.state('login', {
 			url: "/login",
@@ -96,6 +96,48 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 	// if none of the above states are matched, use this as the fallback
 	$urlRouterProvider.otherwise('/app/home');
+
+	$translateProvider.translations('en', {
+		'Event': 'ઘટના',
+		'myprofile': 'મારી પ્રોફાઇલ',
+		'search': 'આગોતરી શોધ',
+		'notification':'સૂચના',
+		'home':'હોમ',
+		'name':'વિપુલ શાહ',
+		'first':'સૂચના',
+		'second':'બીજું સૂચન',
+		'third':'ત્રીજી સૂચના',
+		'content':'Lorem Ipsum ખાલી મુદ્રણ અને ટાઇપસેટીંગ ઉદ્યોગ બનાવટી લખાણ છે. Lorem Ipsum ક્યારેય અજ્ઞાત પ્રિન્ટર પ્રકારના ગેલી લીધો છે અને તે એક પ્રકાર નમૂનો પુસ્તક બનાવવા માટે scrambled ત્યારે 1500 , ત્યારથી industrys પ્રમાણભૂત બનાવટી લખાણ કરવામાં આવ્યું છે .',
+		'notificationtitle' : 'સૂચના',
+		'firsttitle':'પ્રથમ ટાઇટલ',
+		'secondtitle':'દ્વિતીય ટાઇટલ',
+		'tag':'ટેગ',
+		'vill1':'ગામ એક',
+		'vill2':'ગામ બે'
+	});
+
+	$translateProvider.translations('de', {
+		'Event': 'Event',
+		'myprofile': 'My Profile',
+		'search':'Advance Search',
+		'notification':'Notification',
+		'home':'Home',
+		'name':'Vipul Shah',
+		'first':'Notification',
+		'second':'Second notification',
+		'third':'Third Notification',
+		'content':'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+		'notificationtitle':'Notification',
+		'firsttitle':'First Title',
+		'secondtitle':'Second Title',
+		'tag':'Tag',
+		'vill1':'Village One',
+		'vill2':'Village two'
+	});
+
+	$translateProvider.preferredLanguage('de');
+
+
 })
 
 .directive('fbPost', function ($document) {
@@ -115,6 +157,64 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 	}
 })
 
+
+.filter('serverimage', function () {
+	return function (image) {
+		if (image && image != null) {
+			return "img/" + image;
+		} else {
+			return "img/default.png";
+		}
+	};
+})
+
+.filter('language', function () {
+	return function (noti) {
+
+		//		console.log(lang);
+		//		if (lang == "true") {
+		//			console.log("false");
+		//			switch (noti) {
+		//			case 'Event':
+		//				noti = 'ઘટના';
+		//			}
+		//		}else{
+		//			switch (noti) {
+		//			case 'ઘટના':
+		//				noti = 'Event';
+		//			}
+		//		}
+		//		return noti;
+	};
+})
+
+
+.filter('formatdate', function($filter) {
+  return function(val) {
+    var splitval = val.toString().split(" ");
+    return $filter('date')(val, 'dd MMMM, yyyy')
+  };
+})
+
+.filter('cut', function () {
+		return function (value, wordwise, max, tail) {
+			if (!value) return '';
+
+			max = parseInt(max, 10);
+			if (!max) return value;
+			if (value.length <= max) return value;
+
+			value = value.substr(0, max);
+			if (wordwise) {
+				var lastspace = value.lastIndexOf(' ');
+				if (lastspace != -1) {
+					value = value.substr(0, lastspace);
+				}
+			}
+
+			return value + (tail || ' …');
+		};
+	})
 
 .directive('tweetBox', function ($document) {
 	return {

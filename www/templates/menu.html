@@ -25,33 +25,33 @@
 		<div class="list no-margin">
 			<ion-item class="item item-thumbnail-left">
 				<img src="img/profile.jpg">
-				<h3>Vipul Shah</h3>
+				<h3>{{'name' | translate}}</h3>
 				<p>vipul@wohlig.com</p>
 			</ion-item>
 		</div>
 		<ion-content class="has-header" style="top: 99px;">
 			<ion-list>
 				<ion-item menu-close href="#/app/home">
-					Home
+					{{'home' | translate}}
 				</ion-item>
 				<ion-item menu-close href="#/app/notification">
-					Notification
+					{{'notification' | translate }}
 				</ion-item>
 				<ion-item menu-close href="#/app/advance-search">
-					Advance Search
+					{{'search' | translate }}
 				</ion-item>
 				<ion-item menu-close href="#/app/myprofile">
-					My Profile
+					{{'myprofile' | translate }}
 				</ion-item>
 				<ion-item menu-close href="#/app/events">
-					Events
+					{{'Event' | translate }}
 				</ion-item>
 				<div class="item" style="padding:0px">
 					<div class="row">
-						<div class="col col-33 text-center" style="line-height: 2;padding-left: 10px;">Gujarti</div>
+						<div class="col col-33 text-center" style="line-height: 2;padding-left: 10px;">ગુજરાતી</div>
 						<div class="col col-33 text-center">
-							<label class="toggle toggle-assertive">
-								<input type="checkbox" checked="">
+							<label class="toggle toggle-assertive" ng-init="trans.language = true">
+								<input type="checkbox" ng-model="trans.language" checked = "trans.language" ng-click="fnc(trans.language)">
 								<div class="track">
 									<div class="handle"></div>
 								</div>

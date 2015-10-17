@@ -1,37 +1,17 @@
-<ion-view view-title="Home">
+<ion-view view-title="{{'home' | translate}}">
 	<ion-content>
-		<div class="list card">
-			<div class="item" ng-click="share(item)">
+		<div class="list card" ng-repeat="cont in homecont">
+			<div class="item" ng-click="share(cont)">
 				<span class="item-note"><i class="ion-android-share-alt"></i></span>
-				<h2>Lorem ispum</h2>
+				<h2>{{cont.title | translate}}</h2>
 			</div>
 			<div class="item item-body">
-				<img class="full-image" src="img/news.jpg">
+				<img class="full-image" src="{{cont.image | serverimage}}" ng-if="cont.image">
+				<p ng-bind-html="cont.content | translate | cut:true:80:'. . .'"></p>
+				<h2>{{'tag' | translate}}</h2>
 				<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-				</p>
-				<h2>Tags</h2>
-				<p>
-					<a href="#" class="subdued">Village1</a>
-					<a href="#" class="subdued">Village2</a>
-				</p>
-			</div>
-		</div>
-		<div class="list card">
-			<div class="item">
-				<span class="item-note"><i class="ion-android-share-alt"></i></span>
-				<h2>Lorem ispum</h2>
-			</div>
-
-			<div class="item item-body">
-				<!--				<img class="full-image" src="delorean.jpg">-->
-				<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-				</p>
-				<h2>Tags</h2>
-				<p>
-					<a href="#" class="subdued">Village1</a>
-					<a href="#" class="subdued">Village2</a>
+					<a href="#" class="subdued">{{'vill1' | translate}}</a>
+					<a href="#" class="subdued">{{'vill2' | translate}}</a>
 				</p>
 			</div>
 		</div>

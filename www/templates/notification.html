@@ -1,18 +1,12 @@
-<ion-view view-title="Notification">
+<ion-view view-title="{{'notificationtitle' | translate}}">
 	<ion-content>
 		<ion-list class="full-width">
-			<ion-item class="item-text-wrap notifity">
-				<span class="item-note"><i class="ion-android-share-alt"></i></span>
-				<h2>Notification1</h2>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<p>18/oct/15</p>
-			</ion-item>
-			<ion-item class="item-text-wrap notifity">
-				<span class="item-note"><i class="ion-android-share-alt"></i></span>
-				<h2>Notification2</h2>
-				<img class="full-image" src="img/news.jpg">
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<p>17/oct/15</p>
+			<ion-item class="item-text-wrap notifity" ng-repeat="notify in allnotification">
+				<span class="item-note" ng-click="share(notify)"><i class="ion-android-share-alt"></i></span>
+				<h2>{{notify.title | translate}}</h2>
+				<img class="full-image" ng-src="{{notify.image | serverimage}}" ng-if = "notify.image">
+				<p ng-bind-html="notify.content | translate | cut:true:80:'. . .'"></p>
+				<p>{{notify.timestamp | formatdate}}</p>
 			</ion-item>
 		</ion-list>
 	</ion-content>
